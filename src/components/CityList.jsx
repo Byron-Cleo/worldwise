@@ -1,9 +1,12 @@
 import Spinner from "./Spinner";
 import CityItem from "./CityItem";
+import Messgae from "./Message";
 import styles from "./CityList.module.css";
 
 function CityList({ cities, isLoading }) {
   if (isLoading) return <Spinner />;
+
+  if(!cities.length) return <Messgae message="Add your city firs by clicking on the map."/>
 
   return (
     <ul className={styles.cityList}>
