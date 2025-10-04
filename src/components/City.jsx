@@ -12,10 +12,10 @@ const formatDate = (date) =>
 function City() {
   //getting the id from the url
   const { id } = useParams();
-  const [searchParams, ] = useSearchParams();
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
-  console.log(id, lat, lng)
+  // const [searchParams, ] = useSearchParams();
+  // const lat = searchParams.get("lat");
+  // const lng = searchParams.get("lng");
+  // console.log(id, lat, lng)
 
   // TEMP DATA
   const currentCity = {
