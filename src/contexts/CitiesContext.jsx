@@ -41,12 +41,16 @@ function CitiesProvider({ children }) {
   async function createCity(newCity) {
     try {
       setIsLoading(true);
+      
+      //this is line of code updates the server/remote state by making a post request
       const res = await fetch(`${BASE_URL}/cities`, {
         method: "POST",
         body: JSON.stringify(newCity),
         headers: { "Content-Type": "application/json" },
       });
+
       const data = await res.json();
+      //this lineupdates the UI state so that the UI reflects the new created city
       setCites(cities => [...cities, data])
     } catch (err) {
       alert("There was an error loading data...");
