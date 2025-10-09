@@ -25,13 +25,13 @@ function reducer(state, action) {
 
   //STEP 1: DEFINE THE ACTIONS
   switch (action.type) {
-    case "laoded":
+    case "loading":
       return {
         ...state,
         isLoading: true,
       };
 
-    case "cities/laoded":
+    case "cities/loaded":
       return {
         ...state,
         isLoading: false,
@@ -97,7 +97,7 @@ function CitiesProvider({ children }) {
   }, []);
 
   async function getCity(id) {
-    if(Number(id) === currentCity.id) return;
+    if (Number(id) === currentCity.id) return;
 
     dispatch({ type: "loading" });
     try {
@@ -145,6 +145,7 @@ function CitiesProvider({ children }) {
       });
     }
   }
+
   // const [cities, setCites] = useState([]);
   // const [isLoading, setIsLoading] = useState(false);
   // const [currentCity, setCurrentCity] = useState(false);
