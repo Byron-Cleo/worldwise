@@ -11,6 +11,7 @@ import Form from "./components/Form";
 import PageNotFound from "./pages/PageNotFound";
 import { CitiesProvider } from "./contexts/CitiesContext";
 import { AuthProvider } from "./contexts/FakeAuthContext";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/product" element={<Product />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/app" element={<AppLayout />}>
+            <Route path="/app" element={<ProtectedRoute><AppLayout /></ProtectedRoute>}>
               <Route index element={<Navigate to="/app/cities" replace />} />
               <Route path="/app/cities" element={<CityList />} />
               <Route path="/app/cities/:id" element={<City />} />
